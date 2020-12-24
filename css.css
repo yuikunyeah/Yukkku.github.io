@@ -1,0 +1,56 @@
+body{
+  background-color:#ddd;
+}
+.top{
+  position:fixed;
+  background-color:#22a;
+  width:100%;
+  margin:0px;
+  top:0;
+  right:0;
+  left:0;
+  padding:10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.top *{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.top div{
+  padding-right:10px;
+  padding-left:10px;
+  height:60px;
+  border-right:4px solid #44f;
+}
+.top a{
+  text-decoration:none;
+  color:#fff;
+}
+.gazoyoko{
+  vertical-align: middle;
+  display: inline;
+}
+.home{
+  border-left:4px solid #44f;
+}
+.main{
+  width:80%;
+  padding:20px;
+  margin:10 auto;
+  margin-top:100px;
+  background-color:#fff;
+}
+.underline{
+  margin:0px;
+  width:80%;
+  height:5px;
+  background-color:#00f;
+  margin-bottom:20px;
+}
+.0s{
+  margin-bottom:0px;
+}
