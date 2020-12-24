@@ -9,7 +9,7 @@ function include( license , url ) {
   <div class="top">
     <div class="home">
       <a href="/">
-        <img src="icon.png" width="60" height="60">
+        <img src="/icon.png" width="60" height="60">
         <font size="5" class="gazoyoko">Home</font>
       </a>
     </div>
