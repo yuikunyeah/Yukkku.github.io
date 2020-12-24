@@ -1,33 +1,8 @@
 <html>
   <head>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="css.css">
     <title>Yukkkuのhtmlとかcssとか練習場</title>
-　　　　<script>
-function getApi(url,code) {
-  let a = new XMLHttpRequest()
-  a.open('GET' , url)
-  a.responseType = 'json'
-  a.onload = function () {
-    code( this.response )
-  }
-  a.send()
-}
-getApi('https://scratchdb.lefty.one/v2/user/info/yukku' , function ( a ) {
-a = a['statistics']
-a = '<h4 class="0s">星数</h4>'
-+ a['favorites'] + '個 日本 : ' + a['ranks']['country']['favorites'] + '位 世界 : ' + a['ranks']['favorites'] + '位' 
-+ '<h4 class="0s">ハート数</h4>'
-+ a['loves'] + '個 日本 : ' + a['ranks']['country']['loves'] + '位 世界 : ' + a['ranks']['loves'] + '位' 
-+ '<h4 class="0s">フォロワー数</h4>'
-+ a['followers'] + '個 日本 : ' + a['ranks']['country']['followers'] + '位 世界 : ' + a['ranks']['followers'] + '位' 
-+ '<h4 class="0s">参照数</h4>'
-+ a['views'] + '個 日本 : ' + a['ranks']['country']['views'] + '位 世界 : ' + a['ranks']['views'] + '位' 
-+ '<h4 class="0s">コメント数</h4>'
-+ a['comments'] + '個 日本 : ' + a['ranks']['country']['comments'] + '位 世界 : ' + a['ranks']['comments'] + '位' 
-  document.getElementById('api').innerHTML = a
-})
-    </script>
   </head>
   <body>
     <div class="top">
@@ -56,7 +31,6 @@ a = '<h4 class="0s">星数</h4>'
     <div class="main">
       <h2 class="0s">プロフィール</h2>
       <div class="underline"></div>
-<font color="red">※このページはScratchDBを使用しているため、ライセンスが<a href="https://creativecommons.org/licenses/by-sa/2.0/deed.ja">CC BY-SA 2.0</a>になっています。</font>
         <ul>
         　　<li>2006年生まれ
           <li>男
@@ -65,15 +39,8 @@ a = '<h4 class="0s">星数</h4>'
         　　<li>絵が苦手
 　　　　　　　　　　<li>好きな数字はオメガ収束点 ( α↦Ω<small>α</small> )
         </ul>
-ちなみにですが、生年月日を全部書くのはScratchのコミュニティーガイドラインに違反します。
-<h3>Apiで見る統計</h3>
-<a href="scratch.mit.edu/users/DatOneLefty">DatOneLefty</a>さんの<a href="scratchdb.lefty.one">ScratchDB</a>を使用しています。
-<div id="api"><h4 class="0s">星数</h4>Loading...
-     <h4 class="0s">ハート数</h4>Loading...
-     <h4 class="0s">フォロワー数</h4>Loading...
-     <h4 class="0s">参照数</h4>Loading...
-     <h4 class="0s">コメント数</h4>Loading...</div>
+統計は<a href="/statistics">こちら</a>をご覧ください。<br><br>ちなみにですが、生年月日を全部書くのはScratchのコミュニティーガイドラインに違反します。
     </div>
-    このページのライセンスは<a href="https://creativecommons.org/licenses/by-sa/2.0/deed.ja">CC BY-SA 2.0</a>です。
+    このページのライセンスは<a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a>です。つまりクレジットだけ書いておけば自由にプログラムとかを使っていい感じのサイトです。
   </body>
 </html>
