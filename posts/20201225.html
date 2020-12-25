@@ -10,7 +10,7 @@ Scratchで自分の作ったサイトのリンクを載せるには、コメン�
 という訳でApiを叩いてみました。URLは <code>https://scratch.mit.edu/site-api/comments/gallery/スタジオのID</code> です。<br>
 軽くプログラムを組んでいきます。とりあえず最初はconsoleに表示させておきます。
 <pre class="quote"><code>let a = new XMLHttpRequest()
-a.open('GET' , 'https://scratch.mit.edu/site-api/comments/gallery/28369278' )
+a.open('GET' , 'https://scratch.mit.edu/site-api/comments/gallery/スタジオID' )
 a.responseType = 'text'
 a.onload = function () {
   console.log( this.response )
