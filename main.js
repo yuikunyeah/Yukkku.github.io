@@ -24,8 +24,13 @@ function include( license , url ) {
       </a>
     </div>
     <div class="Scratch">
-      <a href="https://scratch.mit.edu/users/yukku">
+      <a href="//scratch.mit.edu/users/yukku">
         <font size="5">Scratchのプロフ</font>
+      </a>
+    </div>
+    <div class="Scratch">
+      <a href="//scratch.mit.edu/studios/28405354/comments">
+        <font size="5">コメントする</font>
       </a>
     </div>
   </div>
