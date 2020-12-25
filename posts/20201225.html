@@ -1,0 +1,50 @@
+<html>
+  <body style="visibility:hidden;background-color:#ddd;">
+    <h2 class="0s">このサイトでやりたかったこと</h2>
+    <div class="underline"></div>
+Scratchで自分の作ったサイトのリンクを載せるには、コメント欄を設置せずにScratchのスタジオのコメント欄などで対処する必要があります。<br>
+でも、私は考えました。
+<blockquote class="quote">
+コメントを書く欄はつけられないけど表示させるぐらいのことはできるんじゃね?
+</blockquote>
+という訳でApiを叩いてみました。URLは <code>https://scratch.mit.edu/site-api/comments/gallery/スタジオのID</code> です。<br>
+軽くプログラムを組んでいきます。とりあえず最初はconsoleに表示させておきます。
+<pre class="quote"><code>let a = new XMLHttpRequest()
+a.open('GET' , 'https://scratch.mit.edu/site-api/comments/gallery/28369278' )
+a.responseType = 'text'
+a.onload = function () {
+  console.log( this.response )
+}
+a.send()</code></pre><small>※私の気分でスタジオIDを隠しています。この下にあるコードたちもみんなスタジオIDが隠されています。</small><br>
+これを実行した結果がこちらです。
+<pre class="quote"><code>&lt;!-- templates/comments/list.html -->
+
+
+    &lt;li class="top-level-reply">
+
+    ( ...1000行くらい略... )
+
+    &lt;/li>
+
+
+&lt;!-- end templates/comments/list.html --></code></pre>
+htmlっぽいなにかを返しました。<br>
+「これでいける」って思っていたのですが、このサイト内で実行すると
+<blockquote style="background-color:#f44;padding:8px;">
+Access to XMLHttpRequest at 'https://scratch.mit.edu/site-api/comments/gallery/スタジオID' (redirected from 'https://scratch.mit.edu/site-api/comments/gallery/スタジオID') from origin 'https://yukkku.github.io' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+</blockquote>
+とエラーが返ってしまいました。<br>
+翻訳機に突っ込んで意味を見ると「怪しい顔しているから情報あげない。」という状態です。
+ということです。<br>
+そういう訳で別の方法を試すことになりました。そしてついに「iframe」という手段を思い浮かびました。<br>
+その結果がこちら
+<blockquote style="background-color:#f44;padding:8px;">
+Refused to display 'https://scratch.mit.edu/studios/スタジオID/comments/' in a frame because it set 'X-Frame-Options' to 'sameorigin'.
+</blockquote>
+要するに「scratch.mit.eduじゃないと読み込ませないよ」という状態です。<br>
+<br>
+という訳でいろいろ頑張ったけど無理でした。方法が分かる人は教えてください。
+  </body>
+  <script src="/main.js"></script>
+  <script>include( 'CC BY 4.0' , 'by' )</script>
+</html>
