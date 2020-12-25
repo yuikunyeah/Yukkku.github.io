@@ -34,7 +34,7 @@ function include( license , url ) {
       </a>
     </div>
   </div>
-  <div class="menu" onclick="menu()">
+  <div class="menu" id="botn" onclick="menuOpen()">
     <svg viewBox="0 0 60 60" width="60" height="60">
       <line x1="10" y1="15" x2="50" y2="15" stroke="#fff" stroke-width="5"/>
       <line x1="10" y1="30" x2="50" y2="30" stroke="#fff" stroke-width="5"/>
@@ -42,12 +42,14 @@ function include( license , url ) {
     </svg>
   </div>
 </div>
-<div id="menu" class="hih">
+<div id="menu">
 </div>
-<div id="gut" class="hih2">
-  <h2>相互リンク</h2>
+<div id="gut">
+  <h2 class="s0">相互リンク</h2>
+<div class="underline"></div>
 まだ相互リンクはありません。募集しています。
-  <h2>更新情報</h2>
+  <h2 class="s0">更新情報</h2>
+<div class="underline"></div>
   <h3>2020/12/25</h3>こういう飛び出るメニューを作りました。
   <h3>2020/12/24</h3>このサイトを1から作りました。
 </div>
@@ -60,9 +62,14 @@ function include( license , url ) {
   document.body.style = ''
 }
 
-function menu() {
-  document.getElementById('menu').classList.toggle('hyo');
-  document.getElementById('menu').classList.toggle('hih');
-  document.getElementById('gut').classList.toggle('hyo2');
-  document.getElementById('gut').classList.toggle('hih2');
+function menuOpen() {
+  document.getElementById("botn").onclick = function () {menuClose()}
+  document.getElementById("menu").style.setProperty('--menu', '0px');
+  document.getElementById("gut").style.setProperty('--gut', '70%');
+}
+
+function menuClose() {
+  document.getElementById("botn").onclick = function () {menuOpen()}
+  document.getElementById("menu").style.setProperty('--menu', 'calc(100% - 80px)');
+  document.getElementById("gut").style.setProperty('--gut', '100%');
 }
