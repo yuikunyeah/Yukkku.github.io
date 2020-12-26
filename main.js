@@ -1,3 +1,5 @@
+var mousey = 0
+document.body.addEventListener("mousemove",function(a){mousey=a.pageY;})
 function include( license , url ) {
   let head = `
 <link rel="icon" href="/favicon.ico">
@@ -5,7 +7,7 @@ function include( license , url ) {
 <title>Yukkkuのhtmlとかcssとか練習場</title>
 `
   let body = `
-<div class="top">
+<div id="top">
   <div class="home">
     <a href="/">
       <img src="/icon.png" width="60" height="60">
@@ -42,12 +44,11 @@ function include( license , url ) {
     </svg>
   </div>
 </div>
-<div id="menu">
-</div>
+<div id="menu"></div>
 <div id="gut">
   <h2 class="s0">相互リンク</h2>
 <div class="underline"></div>
-まだ相互リンクはありません。募集しています。
+<span><img src="https://uploads.scratch.mit.edu/users/avatars/33702239.png" width="30" height="30"><font class="gazoyoko"><a href="//tsumuri3.github.io/homepage/tsumuri">tsumuri3のホームページ</a> by<a href="">tsumuri3</a></font></span>
   <h2 class="s0">更新情報</h2>
 <div class="underline"></div>
   <h3>2020/12/25</h3>こういう飛び出るメニューを作りました。
@@ -64,12 +65,24 @@ function include( license , url ) {
 
 function menuOpen() {
   document.getElementById("botn").onclick = function () {menuClose()}
-  document.getElementById("menu").style.setProperty('--menu', '0px');
+  document.getElementById("menu").style.setProperty('--menu', '0%');
   document.getElementById("gut").style.setProperty('--gut', '70%');
 }
 
 function menuClose() {
   document.getElementById("botn").onclick = function () {menuOpen()}
-  document.getElementById("menu").style.setProperty('--menu', 'calc(100% - 80px)');
+  document.getElementById("menu").style.setProperty('--menu', '100%');
   document.getElementById("gut").style.setProperty('--gut', '100%');
 }
+
+setInterval( function () {
+  if( mousey - window.pageYOffset < 80 ){
+    document.getElementById("top").style.setProperty('--top', 'calc(100% - 80px)');
+  }else{
+    if( window.pageYOffset > 80 ){
+      document.getElementById("top").style.setProperty('--top', '100%');
+    }else{
+      document.getElementById("top").style.setProperty('--top','calc(100% - ' + ( 80 - window.pageYOffset ) + 'px)');
+    }
+  }
+},100)
