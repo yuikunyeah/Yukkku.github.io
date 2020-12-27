@@ -48,7 +48,8 @@ function include( license , url ) {
 <div id="gut">
   <h2 class="s0">相互リンク</h2>
 <div class="underline"></div>
-<span><img src="https://uploads.scratch.mit.edu/users/avatars/33702239.png" width="30" height="30"><font class="gazoyoko"><a href="//tsumuri3.github.io/homepage/tsumuri">tsumuri3のホームページ</a> by<a href="">tsumuri3</a></font></span>
+<span><img src="https://uploads.scratch.mit.edu/users/avatars/33702239.png" width="30" height="30"><font class="gazoyoko"><a href="//tsumuri3.github.io/homepage/tsumuri">tsumuri3のホームページ</a> by<a href="">tsumuri3</a></font></span><br>
+<span><img src="https://uploads.scratch.mit.edu/users/avatars/42107291.png" width="30" height="30"><font class="gazoyoko"><a href="//bsahd.github.io/">bsahdのページ</a> by<a href="">bsahd</a></font></span>
   <h2 class="s0">更新情報</h2>
 <div class="underline"></div>
   <h3>2020/12/25</h3>こういう飛び出るメニューを作りました。
