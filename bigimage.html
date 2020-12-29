@@ -1,0 +1,38 @@
+<html>
+  <body style="visibility:hidden;background-color:#ddd;">
+    <h1 class="0s">でっかい画像読み込みジェネレーター</h1>
+    <div class="underline"></div>
+    Scratchでは大きなビットマップ画像を読み込むと小さくなってしまいます。<br>しかし、svgの形式にすれば画像が荒くなることがありません。<br>なので、画像をsvgに変換して、大きいまま読み込めるようにするジェネレーターを作りました。<br><br>
+    <input type="file" id="yomi"><br><br>
+    <img src="" id="k" style="max-width:500px;max-width:500px;"><br><br>
+    <input type="button" value="書き出す" onclick="kakidasi()"/>
+  </body>
+  <script src="/main.js"></script>
+  <script>include( 'CC BY 4.0' , 'by/4.0' )</script>
+  <script>
+function getBase64(file , code ) {
+   var reader = new FileReader()
+   reader.readAsDataURL(file)
+   reader.onload = function () {
+     code( reader.result )
+   }
+}
+
+
+document.getElementById('yomi').addEventListener('change', function ( b ) {
+  let c = b.target.files[0]
+  getBase64( c , function ( d ) {
+    document.getElementById("k").src = d
+  })
+},false);
+
+function kakidasi(){
+  let e = document.getElementById("k")
+  let d = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="' + e.naturalWidth + '" height="' + e.naturalHeight + '"><image x="0" y="0" width="' + e.naturalWidth + '" height="' + e.naturalHeight + '" xlink:href="' + e.src + '"/></svg>'
+  let link = document.createElement('a')
+  link.href = URL.createObjectURL( new Blob([ d ],{type:"text/plan"}) )
+  link.download = 'image.svg'
+  link.click()
+}
+  </script>
+</html>
