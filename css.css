@@ -1,7 +1,7 @@
 :root {
   --gut:100%;
   --menu:100%;
-  --top:100%;
+  --top:calc(100%-80px);
   --hureta:#000;
 }
 
