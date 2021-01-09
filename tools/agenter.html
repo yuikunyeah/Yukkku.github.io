@@ -1,0 +1,31 @@
+<html>
+  <body style="visibility:hidden;background-color:#ddd;">
+    <h1 class="0s">ユーザーエージェントを調べる機械</h1>
+    <div class="underline"></div>
+    UAを簡単に調べる機械を作ってみました。<br><br>
+    <input type="text" maxlength='20' size="35" id="username">
+    <input type="button" value="調べる" onclick="sirabe()"/><br>
+    <span id="ua"></span>
+  </body>
+  <script src="/main.js"></script>
+  <script>include( 'CC BY 4.0' , 'by/4.0' )</script>
+  <script>
+function getApi(url,code,mode) {
+  let a = new XMLHttpRequest()
+  a.open('GET' , url)
+  a.responseType = mode
+  a.onload = function () {
+    code( this.response )
+  }
+  a.send()
+}
+
+function sirabe(){
+  getApi( 'https://scratch.mit.edu/messages/ajax/user-activity/?max=9999&user=' + document.getElementById("username").value , function( b ){
+    getApi('https://projects.scratch.mit.edu/' + /<a href="\/projects\/(\d+?)\/" data-tag="object">/.exec(b)[1] , function( c ){
+      document.getElementById("ua").innerHTML=c['meta']['agent']
+    },'json')
+  },'text')
+}
+  </script>
+</html>
