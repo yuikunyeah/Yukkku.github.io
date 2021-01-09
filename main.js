@@ -25,11 +25,6 @@ function include( license , url ) {
         <font size="5">記事一覧</font>
       </a>
     </div>
-    <div class="toollist">
-      <a href="/toollist">
-        <font size="5">ツール一覧</font>
-      </a>
-    </div>
     <div class="Scratch">
       <a href="//scratch.mit.edu/users/yukku">
         <font size="5">Scratchのプロフ</font>
